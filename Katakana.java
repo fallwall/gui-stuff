@@ -1,9 +1,27 @@
+
+// import java.util.Scanner;
+
 public class Katakana {
+  String[] kata;
+  // private static final Scanner input = new Scanner(System.in);
+  public Katakana() {
+    this.kata = kata();
+  }
   public static void main(String[] args) {
     // Map<Integer, String> map = new HashMap<Integer, String>();
+    // do {
+    //   String[] kata = kata();
+    //   System.out.format("Try this kata %s. \r\n", kata[0]);
+    //   boolean resp = guess(kata);
+    //   if (resp) {
+    //     System.out.println("you got it.");
+    //   } else {
+    //     System.out.format("Wrong. It's %s. \r\n", kata[1]);
+    //   }
+    // } while (true);
+    Katakana demo = new Katakana();
+    System.out.println(demo.kata[0]);
 
-    String kata = kata();
-    System.out.println(kata);
   }
 
   private static final String[][] kataO = { { "ア", "a" }, { "イ", "i" }, { "ウ", "u" }, { "エ", "e" }, { "オ", "o" } };
@@ -21,9 +39,15 @@ public class Katakana {
   private static final String[][][] kataAll = { kataO, kataK, kataS, kataT, kataN, kataH, kataM, kataY, kataR, kataW,
       kataA };
 
-  private static String kata() {
+  private static String[] kata() {
     int arrInd = (int) (Math.random() * 11);
-    return kataAll[arrInd][(int) (Math.random() * kataAll[arrInd].length)][0];
+    return kataAll[arrInd][(int) (Math.random() * kataAll[arrInd].length)];
   }
+
+  // private static boolean guess(String[] kata) {
+  //   System.out.println("Enter:");
+  //   String answer = input.next();
+  //   return answer.contentEquals(kata[1]) ? true : false;
+  // }
 
 }
